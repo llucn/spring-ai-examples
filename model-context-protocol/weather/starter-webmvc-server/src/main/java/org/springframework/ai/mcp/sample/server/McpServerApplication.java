@@ -20,6 +20,16 @@ public class McpServerApplication {
 		return MethodToolCallbackProvider.builder().toolObjects(weatherService).build();
 	}
 
+	@Bean
+	public ToolCallbackProvider mailTools(MailService mailService) {
+		return MethodToolCallbackProvider.builder().toolObjects(mailService).build();
+	}
+
+	@Bean
+	public ToolCallbackProvider clinicTools(ClinicService clinicService) {
+		return MethodToolCallbackProvider.builder().toolObjects(clinicService).build();
+	}
+
 	public record TextInput(String input) {
 	}
 
